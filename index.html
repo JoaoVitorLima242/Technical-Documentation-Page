@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="tec_doc_page.css">
+    <title>Technical Documentation Page: Flex Proprieties</title>
+</head>
+<body>
+   <!--
+-- Nav Bar --
+-->
+  <nav id="navbar">
+    <header><h1>Flexbox Propieties</h1></header>
+    <ul>
+      <li><a href="#introduction" class="nav-link nav-link-normal">Introduction</a></li>
+      <li><a href="#What's_Flexbox?" class="nav-link nav-link-normal">What's Flexbox?</a></li>
+      <li><a href="#Container_Properties" class="nav-link nav-link-container">Container Properties</a></li>
+      <li><a href="#display" class="nav-link nav-link-container">display</a></li>
+      <li><a href="#flex-direction" class="nav-link nav-link-container">flex-direction</a></li>
+      <li><a href="#flex-wrap" class="nav-link nav-link-container">flex-wrap</a></li>
+      <li><a href="#justify-content" class="nav-link nav-link-container">justify-content</a></li>
+      <li><a href="#align-items" class="nav-link nav-link-container">align-items</a></li>
+      <li><a href="#align-content" class="nav-link nav-link-container">align-content</a></li>
+      <li><a href="#Flex_Items_Properties" class="nav-link nav-link-items">Flex Items Properties</a></li>
+      <li><a href="#order" class="nav-link nav-link-items">order</a></li>
+      <li><a href="#flex-grow" class="nav-link nav-link-items">flex-grow</a></li>
+      <li><a href="#flex-shrink" class="nav-link nav-link-items">flex-shrink</a></li>
+      <li><a href="#flex-basis" class="nav-link nav-link-items">flex-basis</a></li>
+      <li><a href="#flex" class="nav-link nav-link-items">flex</a></li>
+      <li><a href="#align-self" class="nav-link nav-link-items">align-self</a></li>
+    </ul>
+  </nav>
+  <!--
+-- Main --
+-->
+  <main id="main-doc">
+    <!--
+-- Introduction -- 
+-->
+    <section class="main-section" id="introduction">
+      <header><h2>Introduction</h2></header>
+      <h3>In this work, I will talk about the Flexbox proprieties using codes and images.All the documentation and images in this page is taken from <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks</a> and <a href="https://developer.mozilla.org/en-US/">MDN Web Docs.</a></h3>
+    </section>
+    <!-- 
+-- What is flex section --
+-->
+    <section class="main-section" id="What's_Flexbox?">
+      <header><h2>What's Flexbox?</h2></header>
+      <p>Flexbox is the commonly-used name for the CSS Flexible Box Layout Module, a layout model for displaying items in a single dimension — as a row or as a column.</p>
+      <p>In the specification, Flexbox is described as a layout model for user interface design. The key feature of Flexbox is the fact that items in a flex layout can grow and shrink. Space can be assigned to the items themselves, or distributed between or around the items.</p>
+      <p>Flexbox also enables alignment of items on the main or cross axis, thus providing a high level of control over the size and alignment of a group of items.</p>
+    </section>
+    <!--
+-- Container Section --
+-->
+    <section class="main-section" id="Container_Properties">
+      <header><h2><span class="container-h2">Container Properties</span></h2></header>
+      <!--
+-- Container Image --
+-->
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg" alt="container image">
+      <p>When using Flexbox, it is very important to know which properties are declared in the "container" (for example, a div that will contain the elements to be aligned) and which will be declared in the "items". Below are properties that must be declared using the parent element as a selector (to align "items):
+      </p>
+    </section>
+        <!--
+-- Display Section --
+-->
+    <section class="main-section" id="display">
+      <header><span class="container-h2">display</span></header>
+      <p>This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.</p>
+      <!--
+-- Display code -- 
+-->
+      <pre class="code-container">
+      <code>
+   .container <span class="code-value">{</span>
+   display: <span class="code-value"> flex; </span><span class="code-anotacion">/* or inline-flex */</span>
+   <span class="code-value">}</span>
+      </code>
+</pre>
+      <p>Note that CSS columns have no effect on a flex container.</p>
+    </section>
+    <!--
+-- Flex-Direction Section --
+-->
+    <section class="main-section" id="flex-direction">
+      <header><span class="container-h2"> flex-direction</span></header>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" alt="Flex Direction Image">
+      <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.</p>
+      <!--
+-- Flex Direction code --
+-->
+      <pre class="code-container">
+      <code>
+   .container <span class="code-value">{
+   flex-direction:</span> row | row-reverse | column | column-reverse<span class="code-value">;
+   }</span>
+      </code>
+      </pre>
+      
+      <ul class="container-ul">
+        <li> <code class="code-in-text-container">row</code> (default): left to right in <code class="code-in-text-container">ltr</code>; right to left in <code class="code-in-text-container">rtl.</code></li>
+        <li><code class="code-in-text-container">row-reverse</code>: right to left in <code class="code-in-text-container">ltr</code>; left to right in <code class="code-in-text-container">rtl</code>
+</li>
+        <li><code class="code-in-text-container">column</code>: same as <code class="code-in-text-container">row</code> but top to <code class="code-in-text-container">bottom</code></li>
+        <li><code class="code-in-text-container">column-reverse</code>: same as <code class="code-in-text-container">row-reverse</code> but bottom to top</li>
+      </ul>
+    </section>
+    <!--
+-- Flex-Wrap Section --
+-->
+    <section class="main-section" id="flex-wrap">
+      <header><span class="container-h2">flex-wrap</span></header>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg" alt="Flex Wrap Image">
+      <p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.</p>
+      <!--
+-- Flex-Wrap Code --
+-->
+      <pre class="code-container">
+      <code>
+   .container<span class="code-value">{
+   flex-wrap:</span> nowrap | wrap | wrap-reverse<span class="code-value">;
+   }</span>
+      </code>
+      </pre>
+      <ul class="container-ul">
+        <li><code class="code-in-text-container">nowrap</code> (default): all flex items will be on one line</li>
+        <li><code class="code-in-text-container">wrap</code>: flex items will wrap onto multiple lines, from top to bottom.</li>
+        <li><code  class="code-in-text-container">wrap-reverse</code>: flex items will wrap onto multiple lines from bottom to top.</li>
+      </ul>
+      </section>
+    <!--
+-- Justify-Content Section --
+-->
+      <section class="main-section" id="justify-content">
+        <header><span class="container-h2">justify-content</span></header>
+        <img src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" alt="Justify Content Image">
+        <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.</p>
+        <!--
+   -- Justify-content code --     
+-->
+    <pre class="code-container">
+    <code>
+    .container <span class="code-value">{
+    justify-content:</span> flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe<span class="code-value">;
+    }</span>
+    </code>
+    </pre>
+        <ul class="container-ul">
+          <li><code class="code-in-text-container">flex-start</code> (default): items are packed toward the start of the flex-direction.</li>
+          <li><code class="code-in-text-container">flex-end</code>: items are packed toward the end of the flex-direction.</li>
+          <li><code class="code-in-text-container">start</code>: items are packed toward the start of the writing-mode direction.</li>
+          <li><code class="code-in-text-container">end</code>: items are packed toward the end of the <code class="code-in-text-container">writing-mode</code> direction.</li>
+          <li><code class="code-in-text-container">left</code>: items are packed toward left edge of the container, unless that doesn’t make sense with the <code class="code-in-text-container">flex-direction</code>, then it behaves like <code class="code-in-text-container">start</code>.</li>
+          <li><code class="code-in-text-container">right</code>: items are packed toward right edge of the container, unless that doesn’t make sense with the <code class="code-in-text-container">flex-direction</code>, then it behaves like <code class="code-in-text-container">end</code>.</li>
+          <li><code class="code-in-text-container">center</code>: items are centered along the line</li>
+          <li><code class="code-in-text-container">space-between</code>: items are evenly distributed in the line; first item is on the start line, last item on the end line</li>
+          <li><code class="code-in-text-container">space-around</code>: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren’t equal, since all the items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the next item because that next item has its own spacing that applies</li>
+          <li><code class="code-in-text-container"> space-evenly</code>: items are distributed so that the spacing between any two items (and the space to the edges) is equal.</li>
+        </ul>
+        <p>Note that that browser support for these values is nuanced. For example, <code class="code-in-text-container">space-between</code> never got support from some versions of Edge, and start/end/left/right aren’t in Chrome yet. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"> MDN has detailed</a> charts. The safest values are <code class="code-in-text-container">flex-start, flex-end, and center</code>.</p>
+        <p>There are also two additional keywords you can pair with these values: <code class="code-in-text-container">safe</code> and <code class="code-in-text-container">unsafe</code>. Using <code class="code-in-text-container">safe</code> ensures that however you do this type of positioning, you can’t push an element such that it renders off-screen (e.g. off the top) in such a way the content can’t be scrolled too (called “data loss”).</p>
+    </section>
+    <!--
+-- Align-Items Section --
+-->
+    <section class="main-section" id="align-items">
+      <header><span class="container-h2"> align-items</span></header>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg">
+      <p>This defines the default behavior for how flex items are laid out along the <strong>cross axis</strong> on the current line. Think of it as the <code class="code-in-text-container">justify-content</code> version for the cross-axis (perpendicular to the main-axis).</p>
+      <!--
+--Alig-Items code--
+-->
+      <pre class="code-container">
+      <code>
+   .container <span class="code-value">{
+   align-items:</span> stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe <span class="code-value">;
+   }</span>
+      </code>
+      </pre>
+      <ul class="container-ul">
+        <li><code class="code-in-text-container"> stretch</code> (default): stretch to fill the container (still respect <code class="code-in-text-container"> min-width/max-width</code>)
+</li>
+        <li><code class="code-in-text-container"> flex-start / start / self-start</code>: items are placed at the start of the cross axis. The difference between these is subtle, and is about respecting the <code class="code-in-text-container"> flex-direction</code> rules or the writing-mode rules.</li>
+        <li><code class="code-in-text-container"> flex-end / end / self-end</code>: items are placed at the end of the cross axis. The difference again is subtle and is about respecting <code class="code-in-text-container"> flex-direction</code> rules vs. writing-mode rules.</li>
+        <li><code class="code-in-text-container"> center</code>: items are centered in the cross-axis</li>
+        <li><code class="code-in-text-container"> baseline</code>: items are aligned such as their baselines align</li>
+      </ul>
+      <p>The <code class="code-in-text-container"> safe and unsafe</code> modifier keywords can be used in conjunction with all the rest of these keywords (although note <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">browser support</a>), and deal with helping you prevent aligning elements such that the content becomes inaccessible.
+
+</p>
+    </section>
+<!--
+--Align-Cotent Section--
+-->
+    <section class="main-section" id="align-content">
+      <header><span class="container-h2">align-content</span></header>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg">
+      <p>This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how <code class="code-in-text-container"> justify-content</code> aligns individual items within the main-axis..</p>
+      <p class="information-p"><strong>Note:</strong> This property only takes effect on multi-line flexible containers, where <code class="code-in-text-container">flex-flow</code> is set to either <code class="code-in-text-container">wrap or wrap-reverse</code>). A single-line flexible container (i.e. where <code class="code-in-text-container">flex-flow</code> is set to its default value, <code class="code-in-text-container">no-wrap</code>) will not reflect <code class="code-in-text-container">align-content</code>.</p>
+      <!--
+-- Code Example --
+-->
+      <pre class="code-container">
+      <code>
+   .container <span class="code-value">{
+   align-content:</span> flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe<span class="code-value">;
+   }</span>
+      </code>
+      </pre>
+      <ul class="container-ul">
+        <li><code class="code-in-text-container"> normal (default)</code>: items are packed in their default position as if no value was set.</li>
+        <li><code class="code-in-text-container">flex-start / start</code>: items packed to the start of the container. The (more supported) <code class="code-in-text-container">flex-start</code> honors the <code class="code-in-text-container">flex-direction</code> while start honors the <code class="code-in-text-container">writing-mode</code> direction.</li>
+        <li><code class="code-in-text-container"> flex-end / end</code>: items packed to the end of the container. The (more support) <code class="code-in-text-container">flex-end</code> honors the <code class="code-in-text-container">flex-direction</code> while end honors the <code class="code-in-text-container">writing-mode</code> direction.</li>
+        <li><code class="code-in-text-container">center</code>: items centered in the container</li>
+        <li><code class="code-in-text-container">space-between</code>: items evenly distributed; the first line is at the start of the container while the last one is at the end</li>
+        <li><code class="code-in-text-container">space-around</code>: items evenly distributed with equal space around each line</li>
+        <li><code class="code-in-text-container">space-evenly</code>: items are evenly distributed with equal space around them</li>
+        <li><code class="code-in-text-container">stretch</code>: lines stretch to take up the remaining space</li>
+      </ul>
+      <p>The <code class="code-in-text-container"> safe and unsafe</code> modifier keywords can be used in conjunction with all the rest of these keywords (although note <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">browser support</a>), and deal with helping you prevent aligning elements such that the content becomes inaccessible.
+</p>
+    </section>
+    <!--
+-- Starting "Items" --
+-->
+    <section class="main-section" id="Flex_Items_Properties">
+      <header><h2><span class="items-h2">Flex Items Properties</span></h2></header>
+      <p>Next, we will see properties that must be declared with the child elements as selector, that is:</p>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg">
+      <p>This means that where there is a parent element (container) with a flex property (the flex-container), it is possible to assign specific flex properties also to the child elements (flex-item).</p>
+      <p>
+You can define the properties below for just one of the child elements using an identifier, such as a specific class.</p>
+    </section>
+    <!--
+-- Order Section --
+-->
+    <section class="main-section" id="order">
+      <header><span class="items-h2">order</span></header>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/order.svg">
+      <p>By default, flex items are laid out in the source <code class="code-in-text-items"> order</code>. However, the order property controls the order in which they appear in the flex container.</p>
+      <!--
+-- Code Example --
+-->
+      <pre class="code-container">
+      <code>
+   .item <span class="code-value">{
+   order:</span> <span class="code-number"> 5</span><span class="code-value">;</span> <span class="code-anotacion">/* default is 0 */</span>
+  <span class="code-value"> }</span>
+      </code>
+      </pre>
+    </section>
+    <!--
+-- flex-grow section --
+-->
+    <section class="main-section" id="flex-grow">
+      <header><span class="items-h2">flex-grow</span></header>
+     <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg">
+      <p>This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+      <p>If all items have <code class="code-in-text-items">flex-grow</code> set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, the remaining space would take up twice as much space as the others (or it will try to, at least).</p>
+      <!--
+-- Code example --
+-->
+      <pre class="code-container">
+      <code>
+   .item <span class="code-value">{
+   flex-grow:</span> <span class="code-number">4</span><span class="code-value">;</span> <span class="code-anotacion">/* default 0 */</span>
+   <span class="code-value">}</span>
+      </code>
+      </pre>
+      <p>Negative numbers are invalid.</p>
+    </section>
+    <!--
+-- flex-shrink section --
+-->
+    <section class="main-section" id="flex-shrink">
+      <header><span class="items-h2">flex-shrink</span></header>
+      <p>This defines the ability for a flex item to shrink if necessary.</p>
+    <pre class="code-container">
+    <code>
+    .item <span class="code-value">{
+    flex-shrink:</span> <span class="code-number">3</span><span class="code-value">;</span> <span class="code-anotacion">/* default 1 */</span>
+    <span class="code-value">}</span>
+    </code>
+    </pre>
+    <p>Negative numbers are invalid.</p>
+    </section>
+    <!--
+-- flex-basis Section --
+-->
+    <section class="main-section" id="flex-basis">
+      <header><span class="items-h2">flex-basis</span></header>
+      <p>This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The <code class="code-in-text-items">auto</code> keyword means “look at my width or height property” (which was temporarily done by the <code class="code-in-text-items">main-size</code> keyword until deprecated). The <code class="code-in-text-items">content</code> keyword means “size it based on the item’s content” – this keyword isn’t well supported yet, so it’s hard to test and harder to know what its brethren <code class="code-in-text-items">max-content, min-content,</code> and <code class="code-in-text-items">fit-content</code> do.</p>
+      <pre class="code-container">
+      <code>
+      .item <span class="code-value">{
+      flex-basis:</span>  | auto; <span class="code-anotacion">/* default auto */</span>
+      <span class="code-value">}</span>
+      </code>
+      </pre>
+      <p>If set to <code class="code-in-text-items">0</code>, the extra space around content isn’t factored in. If set to <code class="code-in-text-items">auto</code>, the extra space is distributed based on its <code class="code-in-text-items">flex-grow</code> value. <a href="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg">See this graphic.</a></p>
+    </section>
+    <!--
+-- Flex Section --
+-->
+    
+    <section class="main-section" id="flex">
+      <header><span class="items-h2">flex</span></header>
+      <p>This is the shorthand for <code class="code-in-text-items">flex-grow, flex-shrink and flex-basis</code> combined. The second and third parameters (<code class="code-in-text-items">flex-shrink and flex-basis</code>) are optional. The default is <code class="code-in-text-items">0 1 auto</code>, but if you set it with a single number value, it’s like <code class="code-in-text-items">1 0</code>.</p>
+      <!--
+-- Code Example --
+-->
+      <pre class="code-container">
+      <code>
+      .item <span class="code-value">{
+      flex:</span> none | [ <span class="code-string">'flex-grow'</span>>  <<span class="code-string">'flex-shrink'</span>> || <<span class="code-string">'flex-basis'</span>> ]
+      <span class="code-value">}</span>
+      </code>
+      </pre>
+  <p><strong>It is recommended that you use this shorthand property</strong> rather than set the individual properties. The shorthand sets the other values intelligently.</p>
+    </section>
+<!--
+-- Align-Self section --
+-->
+    <section class="main-section" id="align-self">
+      <header><span class="items-h2">align-self</span></header>
+      <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg">
+      <p>This allows the default alignment (or the one specified by <code class="code-in-text-items"> align-items</code>) to be overridden for individual flex items.</p>
+      <p>Please see the <code class="code-in-text-items">align-items</code> explanation to understand the available values.</p>
+      <pre class="code-container">
+      <code>
+      .item <span class="code-value"> {
+      align-self:</span> auto | flex-start | flex-end | center | baseline | stretch<span class="code-value"> ;
+      }</span>
+      </code>
+      </pre>
+      <p>Note that <code class="code-in-text-items">float, clear</code> and <code class="code-in-text-items">vertical-align</code> have no effect on a flex item.</p>
+    </section>
+    <footer class="flex-footer" id="contact">
+      <div>
+        <p>Made by João Vitor Brietzke de Lima</p>        
+      </div>
+      <div class="flex-footer">
+        <div>
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-brietzke-de-lima-804a60209/"><img src="https://image000.flaticon.com/png/128/61/61109.png" alt="linkedin icon"></a>
+        </div>
+        <div>
+          <a href="https://github.com/JoaoVitorLima242"><img src="https://image000.flaticon.com/png/128/733/733609.png" alt="github icon"></a>
+        </div>
+      </div>
+    </footer>
+    </main> 
+</body>
+</html>

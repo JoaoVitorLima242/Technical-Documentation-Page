@@ -1,0 +1,287 @@
+/*
+-- Global Code --
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+  }
+  h1 {font-size: 40px;}
+  h2 {font-size: 36px;}
+  h3 {font-size: 28px;}
+  p, li  {font-size: 25px;}
+  
+  h1, h2, h3, header {
+    font-family: oswald;
+  }
+  
+  section {
+    margin:70px 0;
+    
+  }
+  
+  header {
+    margin: 10px;
+    font-size: 36px;
+  }
+  /*
+  -- code for code example --
+  */
+  code {
+    font-size: 22px;
+    color: #f5d67b;
+  }
+  .code-container {
+    background: rgb(35, 35, 35);
+    margin: 30px auto 30px auto;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    width: 600px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+  }
+  .code-value {
+    color: #72e0d1;
+  }
+  
+  .code-anotacion {
+    color: #5e7671;
+  }
+  
+  .code-number {
+    color: #fc9463;
+  }
+  .code-string {
+    color: #83ba52;
+  }
+  /* 
+  -- Nav code --
+  */
+  nav {
+    background: rgb(35, 35, 35);
+    position: fixed;
+    left: 0;
+    width: 300px;
+    height: 100%;
+  }
+  
+  nav ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 600px;
+    margin: 60px 0;
+  }
+  
+  nav h1 {
+  text-align: center;
+  }
+  
+  nav h1, nav a {
+   color: white; 
+  }
+  
+  .nav-link {
+    display: block;
+    margin: 1px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+  /*
+  -- nav buttons custom --
+  */
+  .nav-link-normal:hover {
+    background: #999999;
+    color: white;
+    transition: all 0.7s ease;
+  }
+  /*
+  -- nav buttons custom for container --
+  */
+  .nav-link-container:hover {
+    background: #9b69ff;
+    transition: all 0.7s ease;
+  }
+  /*
+  -- nav buttons custom for items --
+  */
+  .nav-link-container:hover {
+    background: #9b69ff;
+    transition: all 0.7s ease;
+  }
+  /*
+  -- nav buttons for items --
+  */
+  .nav-link-items:hover {
+    background: rgb(255, 178, 54, 0.8);
+    transition: all 0.7s ease;
+  }
+  /* 
+  -- main code --
+  */
+  main {
+    position: absolute;
+    left: 300px;
+    top: 0;
+    color: black;
+    margin: 0 20px;
+  }
+  main h1, h2, h3 {
+    margin: 10px;
+  }
+  main p {
+    margin: 20px 10px;
+  }
+  main li {
+    color: black;
+    margin: 10px 40px;
+  }
+  /*
+  -- Section code --
+  -- Using for image --
+  */
+  .main-section img {
+    width: 500px;
+    display: block;
+    margin: 30px auto 30px auto;
+  }
+  /*
+  -- "Container" styles --
+  */
+  .code-in-text-container {
+    background: rgb(128, 0, 254, 0.3);
+    color: black;
+    font-size: 25px;
+  }
+  .container-ul li::marker {
+    font-size: 150%;
+    color: rgb(128, 0, 254, 0.5);
+  }
+  .container-h2 {
+    background: rgb(128, 0, 254, 0.3);
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 20px 0;
+  }
+  /*
+  -- Information Block --
+  */
+  
+  .information-p {
+    border: 3px solid;
+    border-color: rgb(128, 0, 254, 0.8);
+    padding: 15px;
+    font-size: 23px;
+  }
+  /*
+  -- "Items" styles --
+  */
+  .code-in-text-items {
+    background: rgb(255, 138, 0, 0.2);
+    color: black;
+    font-size: 25px;
+  }
+  .items-ul li::marker {
+    font-size: 150%;
+    color:rgb(255, 138, 0, 0.7);
+  }
+  .items-h2 {
+    background: rgb(255, 138, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 20px 0;
+  }
+  /*
+  -- Footer whith my informations --
+  */
+  footer {
+    background: rgb(196, 196, 197);
+    margin: -20px;
+  }
+  footer p {
+    font-size: 20px;
+  }
+  footer img{
+    width: 50px;
+    margin: 10px;
+  }
+  .flex-footer {
+  display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .flex-img{
+    display: flex;
+  }
+  @media all and (max-width: 960px){
+  .main-section img {
+    width: 300px;
+    display: block;
+    margin: 30px auto 30px auto;
+  }
+  .code-container {
+    background: rgb(35, 35, 35);
+    margin: 30px auto 30px auto;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    width: 400px;
+  }  
+  }
+  
+  @media all and (max-width: 760px){
+    nav {
+    background: rgb(35, 35, 35);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 250px;
+    overflow-y: auto;
+    z-index: 1;
+    }
+    nav ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 140px;
+    margin: 20px 0;
+    width: 100%;
+  }
+    main {
+    position: absolute;
+    left: 0;
+    top: 250px;
+    color: black;
+    margin: 0 20px;
+    }
+  }
+  
+  @media all and (max-width: 480px ) {
+    .main-section img {
+    width: 250px;
+    display: block;
+    margin: 30px auto 30px auto;
+  }
+  
+    .code-container {
+    background: rgb(35, 35, 35);
+    margin: 30px auto 30px auto;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    width: 230px;
+  }
+    h2, header, pre {
+    font-size: 25px;
+    }
+    h3, p, code {
+      font-size: 19px;
+    }
+    footer img {
+      width: 35px;
+    }
+  }
